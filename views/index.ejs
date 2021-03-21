@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get a "Joke"</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  </head>
+  <body>
+    <h1>Get "joke"</h1>
+    <hr>
+      <form method="GET" action="/joke">
+        <h3>Choose Category:</h3>
+        <input type="radio" name="category" value="animal">&nbsp;Animal<br/>
+        <input type="radio" name="category" value="career">&nbsp;Career<br/>
+        <input type="radio" name="category" value="celebrity">&nbsp;Celebrity<br/>
+        <input type="radio" name="category" value="dev">&nbsp;Dev<br/>
+        <input type="radio" name="category" value="explicit">&nbsp;Explicit<br/>
+        <input type="radio" name="category" value="fashion">&nbsp;Fashion<br/>
+        <input type="radio" name="category" value="food">&nbsp;Food<br/>
+        <input type="radio" name="category" value="history">&nbsp;History<br/>
+        <input type="radio" name="category" value="money">&nbsp;Money<br/>
+        <input type="radio" name="category" value="movie">&nbsp;Movie<br/>
+        <input type="radio" name="category" value="music">&nbsp;Music<br/>
+        <input type="radio" name="category" value="political">&nbsp;Political<br/>
+        <input type="radio" name="category" value="religion">&nbsp;Religion<br/>
+        <input type="radio" name="category" value="science">&nbsp;Science<br/>
+        <input type="radio" name="category" value="sport">&nbsp;Sport<br/>
+        <input type="radio" name="category" value="travel">&nbsp;Travel<br/>
+        <button type="submit">Get Chuck Norris Joke</button>
+      </form>
+    <div id="joke"> 
+      <% if(jokes) { %>
+        <% if(category) {%> 
+          <% formattedCat = category[0].toUpperCase() + category.slice(1) %>
+          <b><%= formattedCat %> : </b>
+        <% } %>
+        <%= jokes %>
+      <% } %> 
+    </div>
+  </body>
+</html>
